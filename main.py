@@ -32,9 +32,10 @@ def main():
         print('Download fail, plz check your YouTube link.')
     download_video(yt, args)
 
-    
+percent = 0
     
 def onProgress(streams, chunk, remaining):
+    global percent
     total = streams.filesize
     percent = (total - remaining)/total * 100
     print('downloading...{:05.2f}%'.format(percent), end='\r' )
